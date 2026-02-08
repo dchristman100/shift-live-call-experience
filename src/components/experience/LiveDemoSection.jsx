@@ -137,9 +137,9 @@ export default function LiveDemoSection() {
 
               {/* Divider */}
               <div className="flex items-center gap-4 my-8">
-                <div className="flex-1 h-px bg-gray-200" />
-                <span className="text-xs text-gray-400 font-inter uppercase tracking-wider">Or listen to real calls</span>
-                <div className="flex-1 h-px bg-gray-200" />
+                <div className="flex-1 h-px" style={{ background: "#1C2555" }} />
+                <span className="text-xs font-outfit uppercase tracking-wider" style={{ color: "#636D99" }}>Or listen to real calls</span>
+                <div className="flex-1 h-px" style={{ background: "#1C2555" }} />
               </div>
 
               {/* Audio Players */}
