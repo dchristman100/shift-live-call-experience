@@ -128,8 +128,8 @@ export default function LiveDemoSection() {
 
               <a href="tel:+18557443824" className="block w-full">
                 <Button
-                  className="w-full h-14 text-base font-montserrat font-bold rounded-xl transition-all hover:scale-[1.02]"
-                  style={{ background: "#8B5CF6", color: "white" }}
+                  className="w-full h-14 text-base font-outfit font-bold rounded-xl transition-all hover:scale-[1.02]"
+                  style={{ background: "#FF5252", color: "white" }}
                 >
                   Start Demo Call →
                 </Button>
