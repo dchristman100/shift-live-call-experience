@@ -49,9 +49,9 @@ export default function HeroSection() {
 
       {/* Gradient orbs */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full opacity-10"
-        style={{ background: "radial-gradient(circle, #8B5CF6, transparent 70%)" }} />
+        style={{ background: "radial-gradient(circle, #A78BFA, transparent 70%)" }} />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full opacity-10"
-        style={{ background: "radial-gradient(circle, #FA982F, transparent 70%)" }} />
+        style={{ background: "radial-gradient(circle, #FF9F43, transparent 70%)" }} />
 
       <div className="relative z-10 max-w-[900px] mx-auto px-6 text-center py-20">
         <motion.p
