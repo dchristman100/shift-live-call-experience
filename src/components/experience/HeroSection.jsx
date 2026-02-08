@@ -38,7 +38,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
-      style={{ background: "linear-gradient(165deg, #0D0F33 0%, #1A1D4A 60%, #0D0F33 100%)" }}>
+      style={{ background: "linear-gradient(165deg, #04081A 0%, #0C1232 60%, #04081A 100%)" }}>
       
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.04]"
