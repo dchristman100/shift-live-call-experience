@@ -4,16 +4,26 @@ export default function Layout({ children }) {
   return (
     <div className="min-h-screen bg-white">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+
         :root {
-          --navy-core: #0D0F33;
-          --coral-action: #F54A48;
-          --orange-energy: #FA982F;
-          --purple-accent: #8B5CF6;
-          --success-green: #2E7D32;
-          --light-gray: #F8F9FA;
-          --medium-gray: #6C757D;
+          --bg: #04081A;
+          --surface: #0C1232;
+          --surface2: #131B45;
+          --border: #1C2555;
+          --coral: #FF5252;
+          --orange: #FF9F43;
+          --teal: #2DD4A8;
+          --green: #22C55E;
+          --purple: #A78BFA;
+          --red: #FF4D4D;
+          --white: #FFFFFF;
+          --off: #B8C0E0;
+          --dim: #636D99;
+          --coral-glow: rgba(255,82,82,0.08);
+          --orange-glow: rgba(255,159,67,0.08);
+          --teal-glow: rgba(45,212,168,0.08);
+          --green-glow: rgba(34,197,94,0.08);
         }
         
         html {
