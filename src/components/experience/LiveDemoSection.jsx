@@ -43,22 +43,22 @@ function AudioPlayer({ label, duration, index }) {
       <button
         onClick={toggle}
         className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-colors"
-        style={{ background: playing ? "#8B5CF6" : "#F3E8FF" }}
+        style={{ background: playing ? "#2DD4A8" : "#131B45" }}
       >
         {playing
           ? <Pause className="w-4 h-4 text-white" />
-          : <Play className="w-4 h-4 text-purple-600 ml-0.5" />}
+          : <Play className="w-4 h-4" style={{ color: "#2DD4A8" }} />}
       </button>
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-medium text-gray-800 truncate">{label}</p>
-        <div className="mt-2 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+        <p className="text-sm font-medium text-white truncate">{label}</p>
+        <div className="mt-2 h-1.5 rounded-full overflow-hidden" style={{ background: "#0C1232" }}>
           <div
             className="h-full rounded-full transition-all duration-200"
-            style={{ width: `${progress}%`, background: "#8B5CF6" }}
+            style={{ width: `${progress}%`, background: "#2DD4A8" }}
           />
         </div>
       </div>
-      <span className="text-xs text-gray-400 font-inter flex-shrink-0">{duration}</span>
+      <span className="text-xs font-outfit flex-shrink-0" style={{ color: "#636D99" }}>{duration}</span>
     </motion.div>
   );
 }
