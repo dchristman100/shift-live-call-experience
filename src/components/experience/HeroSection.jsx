@@ -58,8 +58,8 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="font-montserrat text-sm md:text-base font-bold uppercase tracking-[3px] mb-6"
-          style={{ color: "#FA982F" }}
+          className="font-outfit text-sm md:text-base font-bold uppercase tracking-[3px] mb-6"
+          style={{ color: "#FF9F43" }}
         >
           {calculatorData?.totalGap
             ? `You're losing ${formatCurrency(calculatorData.totalGap)}/month`
