@@ -37,7 +37,8 @@ function AudioPlayer({ label, duration, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: 0.1 * index, duration: 0.4 }}
-      className="flex items-center gap-4 p-4 rounded-xl border border-gray-100 bg-white hover:border-purple-200 transition-colors"
+      className="flex items-center gap-4 p-4 rounded-xl border-2 transition-colors"
+      style={{ borderColor: "#1C2555", background: "#131B45" }}
     >
       <button
         onClick={toggle}
