@@ -98,8 +98,8 @@ export default function LiveDemoSection() {
                   transition={{ delay: 0.1 * i, duration: 0.4 }}
                   className="flex items-center gap-3"
                 >
-                  <CheckCircle className="w-5 h-5 flex-shrink-0" style={{ color: "#8B5CF6" }} />
-                  <span className="font-inter text-gray-700 text-[17px]">{b}</span>
+                  <CheckCircle className="w-5 h-5 flex-shrink-0" style={{ color: "#2DD4A8" }} />
+                  <span className="font-plus-jakarta text-[17px]" style={{ color: "#04081A" }}>{b}</span>
                 </motion.div>
               ))}
             </div>
