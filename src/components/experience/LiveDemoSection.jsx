@@ -76,13 +76,13 @@ export default function LiveDemoSection() {
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Left: Intro */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
           >
-            <h2 className="font-montserrat text-3xl md:text-[40px] font-bold leading-tight mb-6"
-              style={{ color: "#0D0F33" }}>
+          <h2 className="font-outfit text-3xl md:text-[40px] font-bold leading-tight mb-6"
+            style={{ color: "#04081A" }}>
               Experience ShiFt AI<br />Right Now
             </h2>
             <p className="font-inter text-gray-500 text-lg leading-relaxed mb-8">
