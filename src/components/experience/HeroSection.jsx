@@ -1,0 +1,105 @@
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+
+export default function HeroSection() {
+  const [calculatorData, setCalculatorData] = useState(null);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const gap = urlParams.get("gap");
+    const invisible = urlParams.get("invisible");
+    const missed = urlParams.get("missed");
+
+    if (gap) {
+      setCalculatorData({ totalGap: gap, invisible, missed });
+    } else {
+      try {
+        const stored = localStorage.getItem("shiftCalculatorResults");
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (Date.now() - parsed.timestamp < 86400000) {
+            setCalculatorData(parsed);
+          }
+        }
+      } catch {}
+    }
+  }, []);
+
+  const formatCurrency = (val) => {
+    const num = parseInt(val);
+    if (isNaN(num)) return null;
+    return num.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+  };
+
+  const scrollToDemo = () => {
+    document.getElementById("live-demo")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
+      style={{ background: "linear-gradient(165deg, #0D0F33 0%, #1A1D4A 60%, #0D0F33 100%)" }}>
+      
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+          backgroundSize: "48px 48px"
+        }} />
+
+      {/* Gradient orbs */}
+      <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full opacity-10"
+        style={{ background: "radial-gradient(circle, #8B5CF6, transparent 70%)" }} />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full opacity-10"
+        style={{ background: "radial-gradient(circle, #FA982F, transparent 70%)" }} />
+
+      <div className="relative z-10 max-w-[900px] mx-auto px-6 text-center py-20">
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="font-montserrat text-sm md:text-base font-bold uppercase tracking-[3px] mb-6"
+          style={{ color: "#FA982F" }}
+        >
+          {calculatorData?.totalGap
+            ? `You're losing ${formatCurrency(calculatorData.totalGap)}/month`
+            : "Roofing contractors lose $50K+/month to competitors"}
+        </motion.p>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="font-montserrat text-4xl sm:text-5xl md:text-[56px] font-bold text-white leading-[1.1] mb-6"
+        >
+          {calculatorData?.totalGap
+            ? "Here's How You Fix That"
+            : "Here's How to Stop the Bleeding"}
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="font-inter text-lg md:text-xl text-white/75 max-w-[680px] mx-auto leading-relaxed mb-12"
+        >
+          AI that answers every call, identifies real buyers, and books appointments — while you sleep.
+        </motion.p>
+
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 1 }}
+          onClick={scrollToDemo}
+          className="inline-flex items-center gap-2 text-white/80 hover:text-white font-inter text-base transition-colors cursor-pointer group"
+        >
+          <span>See it in action</span>
+          <ChevronDown className="w-5 h-5 animate-bounce-down" />
+        </motion.button>
+      </div>
+
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/5 to-transparent" />
+    </section>
+  );
+}
