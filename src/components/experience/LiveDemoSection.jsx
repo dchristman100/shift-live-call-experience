@@ -85,7 +85,7 @@ export default function LiveDemoSection() {
             style={{ color: "#04081A" }}>
               Experience ShiFt AI<br />Right Now
             </h2>
-            <p className="font-inter text-gray-500 text-lg leading-relaxed mb-8">
+            <p className="font-plus-jakarta text-lg leading-relaxed mb-8" style={{ color: "#B8C0E0" }}>
               Don't take our word for it. Call our AI, listen to real calls, or watch it handle a live roofing inquiry. This is exactly what your customers will experience.
             </p>
             <div className="space-y-4">
