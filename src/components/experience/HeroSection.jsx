@@ -81,7 +81,8 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="font-inter text-lg md:text-xl text-white/75 max-w-[680px] mx-auto leading-relaxed mb-12"
+          className="font-plus-jakarta text-lg md:text-[32px] font-medium max-w-[680px] mx-auto leading-relaxed mb-12"
+          style={{ color: "#B8C0E0" }}
         >
           AI that answers every call, identifies real buyers, and books appointments — while you sleep.
         </motion.p>
