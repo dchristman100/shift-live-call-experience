@@ -112,7 +112,7 @@ export default function LiveDemoSection() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <div className="rounded-2xl border border-gray-200 bg-[#F8F9FA] p-6 md:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.06)]">
+            <div className="rounded-2xl border-2 p-6 md:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.06)]" style={{ background: "#0C1232", borderColor: "#1C2555" }}>
               {/* Click to Call */}
               <div className="text-center mb-8">
                 <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
