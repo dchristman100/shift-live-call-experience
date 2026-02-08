@@ -54,6 +54,19 @@ export default function HeroSection() {
         style={{ background: "radial-gradient(circle, #FF9F43, transparent 70%)" }} />
 
       <div className="relative z-10 max-w-[900px] mx-auto px-6 text-center py-20">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-12"
+        >
+          <img 
+            src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69891f74525fd7a798619082/774874628_FinalV2.png"
+            alt="ShiFt Logo"
+            className="h-16 md:h-20 mx-auto"
+          />
+        </motion.div>
+
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
