@@ -92,7 +92,8 @@ export default function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 1 }}
           onClick={scrollToDemo}
-          className="inline-flex items-center gap-2 text-white/80 hover:text-white font-inter text-base transition-colors cursor-pointer group"
+          className="inline-flex items-center gap-2 font-plus-jakarta text-base transition-colors cursor-pointer group"
+          style={{ color: "#B8C0E0" }}
         >
           <span>See it in action</span>
           <ChevronDown className="w-5 h-5 animate-bounce-down" />
