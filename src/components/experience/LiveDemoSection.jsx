@@ -116,12 +116,12 @@ export default function LiveDemoSection() {
               {/* Click to Call */}
               <div className="text-center mb-8">
                 <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
-                  style={{ background: "linear-gradient(135deg, #8B5CF6, #7C3AED)" }}>
+                  style={{ background: "#2DD4A8" }}>
                   <Phone className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="font-montserrat text-xl font-bold text-gray-900 mb-1">Call Our AI Now</h3>
-                <p className="text-sm text-gray-500 font-inter mb-1">Experience a live demo call</p>
-                <p className="font-montserrat text-lg font-bold" style={{ color: "#8B5CF6" }}>
+                <h3 className="font-outfit text-xl font-bold text-white mb-1">Call Our AI Now</h3>
+                <p className="text-sm font-plus-jakarta mb-1" style={{ color: "#B8C0E0" }}>Experience a live demo call</p>
+                <p className="font-outfit text-lg font-bold" style={{ color: "#2DD4A8" }}>
                   (855) 744-3824
                 </p>
               </div>
