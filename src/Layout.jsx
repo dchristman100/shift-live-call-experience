@@ -31,21 +31,21 @@ export default function Layout({ children }) {
         }
         
         body {
-          font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+          font-family: 'Plus Jakarta Sans', sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
-          font-family: 'Montserrat', sans-serif;
+          font-family: 'Outfit', sans-serif;
         }
-        
-        .font-montserrat {
-          font-family: 'Montserrat', sans-serif;
+
+        .font-outfit {
+          font-family: 'Outfit', sans-serif;
         }
-        
-        .font-inter {
-          font-family: 'Inter', sans-serif;
+
+        .font-plus-jakarta {
+          font-family: 'Plus Jakarta Sans', sans-serif;
         }
         
         @keyframes pulse-glow {
