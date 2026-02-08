@@ -70,7 +70,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="font-montserrat text-4xl sm:text-5xl md:text-[56px] font-bold text-white leading-[1.1] mb-6"
+          className="font-outfit text-4xl sm:text-5xl md:text-[64px] font-extrabold text-white leading-[1.1] mb-6"
         >
           {calculatorData?.totalGap
             ? "Here's How You Fix That"
