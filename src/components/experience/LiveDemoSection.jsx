@@ -1,7 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Phone, CheckCircle, Play, Pause, Volume2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useRetellCall } from "@/hooks/useRetellCall";
 
 const audioDemos = [
   { label: "Homeowner inquiry — Roof leak", duration: "1:23" },
@@ -30,6 +31,7 @@ function AudioPlayer({ label, duration, index }) {
       }, 200);
     }
   };
+
 
   return (
     <motion.div
@@ -70,6 +72,64 @@ export default function LiveDemoSection() {
     "Qualifies leads automatically",
     "Books appointments to your calendar",
   ];
+  const { callStatus, startCall, hangUpCall, error } = useRetellCall();
+  const [micStatus, setMicStatus] = useState("idle");
+  const micStreamRef = useRef(null);
+  const [showCall, setShowCall] = useState(false);
+  const callLabel = (() => {
+    if (micStatus === "checking") return "Checking microphone…";
+    if (micStatus === "denied") return "Microphone access required";
+    if (callStatus === "connecting") return "Connecting…";
+    if (callStatus === "in_call") return "In Call";
+    return "Ready";
+  })();
+  const endCallIfActive = () => {
+    if (callStatus === "in_call" || callStatus === "connecting") {
+      hangUpCall();
+      stopMicrophone();
+      setMicStatus("idle");
+    }
+  };
+  const stopMicrophone = () => {
+    if (!micStreamRef.current) return;
+
+    micStreamRef.current.getTracks().forEach((track) => {
+      track.stop();
+    });
+
+    micStreamRef.current = null;
+  };
+  useEffect(() => {
+    if (
+      !showCall &&
+      (callStatus === "in_call" || callStatus === "connecting")
+    ) {
+      hangUpCall().finally(stopMicrophone);
+    }
+  }, [showCall]);
+  useEffect(() => {
+    return () => {
+      stopMicrophone();
+    };
+  }, []);
+  const checkMicrophonePermission = async () => {
+    setMicStatus("checking");
+
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+      micStreamRef.current = stream;
+      setMicStatus("granted");
+      return true;
+    } catch (err) {
+      console.error("Mic permission denied", err);
+      setMicStatus("denied");
+      return false;
+    }
+  };
+  const isCallActive =
+    callStatus === "connecting" || callStatus === "in_call";
+
 
   return (
     <section id="live-demo" className="py-20 md:py-28 bg-white">
@@ -77,13 +137,13 @@ export default function LiveDemoSection() {
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Left: Intro */}
           <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
           >
-          <h2 className="font-outfit text-3xl md:text-[40px] font-bold leading-tight mb-6"
-            style={{ color: "#04081A" }}>
+            <h2 className="font-outfit text-3xl md:text-[40px] font-bold leading-tight mb-6"
+              style={{ color: "#04081A" }}>
               Experience ShiFt AI<br />Right Now
             </h2>
             <p className="font-plus-jakarta text-lg leading-relaxed mb-8" style={{ color: "#B8C0E0" }}>
@@ -127,15 +187,66 @@ export default function LiveDemoSection() {
                 </p>
               </div>
 
-              <a href="tel:+18557443824" className="block w-full">
-                <Button
-                  className="w-full h-14 text-base font-outfit font-bold rounded-xl transition-all hover:scale-[1.02]"
-                  style={{ background: "#FF5252", color: "white" }}
-                >
-                  Start Demo Call →
-                </Button>
-              </a>
+              <Button
+                disabled={isCallActive}
+                onClick={async () => {
+                  const allowed = await checkMicrophonePermission();
+                  if (!allowed) return;
 
+                  setShowCall(true);
+
+                  if (!isCallActive) {
+                    await startCall();
+                  }
+                }}
+                className="w-full h-14 text-base font-outfit font-bold rounded-xl transition-all hover:scale-[1.02]"
+                style={{
+                  background: isCallActive ? "#E5E5E5" : "#FF5252",
+                  color: isCallActive ? "#888888" : "white",
+                  cursor: isCallActive ? "not-allowed" : "pointer",
+                }}
+              >
+                {isCallActive ? "CALL IN PROGRESS…" : "Start Demo Call →"}
+              </Button>
+              
+              {showCall && (
+            <div className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-3xl mx-auto mt-4">
+              {/* Top banner */}
+              <div className="bg-orange-50 text-orange-600 text-center py-3 rounded-md mb-6">
+                Questions? We're live
+              </div>
+
+              {/* Status */}
+              <div className="bg-gray-100 rounded-lg py-6 text-center mb-6">
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-gray-700">
+                  <span className="w-2 h-2 rounded-full bg-orange-500" />
+                  {callLabel}
+                </span>
+              </div>
+
+              {/* Mic denied warning */}
+              {micStatus === "denied" && (
+                <div className="text-center text-red-500 mb-4">
+                  Please allow microphone access to start the call.
+                </div>
+              )}
+
+              {/* Hang up */}
+              {(callStatus === "in_call" || callStatus === "connecting") && (
+                <button
+                  onClick={async () => {
+                    await hangUpCall();
+                    stopMicrophone();
+                    setShowCall(false);
+                    setMicStatus("idle");
+                  }}
+                  className="w-full py-4 bg-red-500 text-white font-semibold rounded-xl"
+                >
+                  🔴 Hang Up Call
+                </button>
+              )}
+            </div>
+          )}  
               {/* Divider */}
               <div className="flex items-center gap-4 my-8">
                 <div className="flex-1 h-px" style={{ background: "#1C2555" }} />
