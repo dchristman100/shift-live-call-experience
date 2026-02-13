@@ -2,27 +2,27 @@ import React, { useRef, useState } from "react";
 import recordingMain from "@/assets/audio/recording.wav";
 import recordingEmergency from "@/assets/audio/recording1.wav";
 import recordingBooking from "@/assets/audio/recording2.wav";
+import roofingImage from "@/assets/audio/man-working-roof-medium-shot.jpg";
+import emergencyImage from "@/assets/audio/engineer-writing-condenser-values.jpg";
+import bookingImage from "@/assets/audio/calendar-agenda-event-meeting-reminder-schedule-graphic-concept.jpg";
 
 const testimonials = [
   {
     id: "roofing",
-    title: "Investor and service provider",
-    image:
-      "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=900&q=80",
+    title: "Homeowner inquiry - Roof leak",
+    image: roofingImage,
     video: recordingMain,
   },
   {
     id: "plumbing",
-    title: "Door Installation flow",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=900&q=80",
+    title: "After-hours emergency call",
+    image: emergencyImage,
     video: recordingEmergency,
   },
   {
     id: "medspa",
-    title: "Exterior and Interior flow",
-    image:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80",
+    title: "Appointment booking flow",
+    image: bookingImage,
     video: recordingBooking,
   },
 ];
@@ -93,7 +93,7 @@ export default function TestimonialsSection() {
                     onEnded={() => setActiveId(null)}
                   />
                 </div>
-                <h3 className="text-center text-xl md:text-2xl font-extrabold text-[#A783BF] mt-4">
+                <h3 className="text-center text-xl md:text-2xl  font-extrabold text-[#fa982f] mt-4">
                   {item.title}
                 </h3>
               </article>
@@ -104,3 +104,6 @@ export default function TestimonialsSection() {
     </section>
   );
 }
+
+export { TestimonialsSection };
+
