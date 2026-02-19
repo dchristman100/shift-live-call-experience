@@ -87,17 +87,19 @@ export default function HeroSection() {
             >
               {calculatorData?.totalGap
                 ? "Here's How ShiFt Plugs All 7"
-                : "See How ShiFt Plugs the 7 Revenue Leaks That Cost Contractors $30K–$100K/Month"}
+                : "Your Business Has 7 Revenue Leaks"}
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="font-plus-jakarta text-lg md:text-[32px] font-medium max-w-[680px] mx-auto leading-relaxed mb-12"
+          className="font-plus-jakarta text-lg md:text-2xl font-medium max-w-[680px] mx-auto leading-relaxed mb-12"
           style={{ color: "#B8C0E0" }}
         >
-          AI that answers every call, identifies real buyers, and books appointments — while you sleep.
+          {calculatorData?.totalGap
+            ? "AI that answers every call, identifies real buyers, and books appointments — while you sleep."
+            : <>They drain $30K–$100K every month.<br />Most owners never find them.</>}
         </motion.p>
 
         <motion.button
