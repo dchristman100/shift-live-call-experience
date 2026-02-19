@@ -82,7 +82,7 @@ export default function FinalCTASection() {
               import("@/api/base44Client").then(({ base44 }) => {
                 base44.analytics.track({ eventName: "experience_to_booking", properties: { from_section: "cta_bottom", time_on_page: Math.round(window.performance.now() / 1000) } });
               });
-            }}>
+            () => base44.analytics.track({ eventName: "experience_to_booking", properties: { from_section: "cta_bottom", time_on_page: Math.round(window.performance.now() / 1000) } })}>
               <button
                 className="font-outfit text-white text-lg font-bold px-12 py-5 rounded-full transition-all duration-300 hover:scale-[1.03] animate-pulse-glow"
                 style={{
