@@ -99,7 +99,7 @@ export default function HeroSection() {
         >
           {calculatorData?.totalGap
             ? "AI that answers every call, identifies real buyers, and books appointments — while you sleep."
-            : <>They drain $30K–$100K every month.<br />Most owners never find them.</>}
+            : <>They drain <span style={{ color: "#F54A48" }}>$30K–$100K</span> every month.<br />Most owners never find them.</>}
         </motion.p>
 
         <motion.button
