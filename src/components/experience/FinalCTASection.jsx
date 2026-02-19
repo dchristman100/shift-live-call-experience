@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+import { base44 } from "@/api/base44Client";
 
 export default function FinalCTASection() {
   const buildBookingUrl = () => {
