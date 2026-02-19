@@ -1,5 +1,6 @@
 import React from "react";
 import HeroSection from "../components/experience/HeroSection";
+import RevenueLeaksSection from "../components/experience/RevenueLeaksSection";
 import LiveDemoSection from "../components/experience/LiveDemoSection";
 import TestimonialsSection from "../components/experience/TestimonialsSection";
 import HowItWorksSection from "../components/experience/HowItWorksSection";
@@ -15,7 +16,8 @@ export default function Home() {
       <HeroSection />
       <CallWidget />
       <TestimonialsSection />
-      {/* <LiveDemoSection />  */}
+      <RevenueLeaksSection />
+      <LiveDemoSection />
       <HowItWorksSection />
       <ProofSection />
       <TimelineSection />
