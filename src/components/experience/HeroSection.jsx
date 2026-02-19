@@ -84,10 +84,10 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="font-outfit text-4xl sm:text-5xl md:text-[64px] font-extrabold text-white leading-[1.1] mb-6"
-        >
-          {calculatorData?.totalGap
-            ? "Here's How You Fix That"
-            : "Here's How to Stop the Bleeding"}
+            >
+              {calculatorData?.totalGap
+                ? "Here's How ShiFt Plugs All 7"
+                : "See How ShiFt Plugs the 7 Revenue Leaks That Cost Contractors $30K–$100K/Month"}
         </motion.h1>
 
         <motion.p
