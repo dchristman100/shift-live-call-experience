@@ -72,11 +72,11 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="font-outfit text-sm md:text-base font-bold uppercase tracking-[3px] mb-6"
-          style={{ color: "#FF9F43" }}
-        >
-          {calculatorData?.totalGap
-            ? `You're losing ${formatCurrency(calculatorData.totalGap)}/month`
-            : "Roofing contractors lose $50K+/month to competitors"}
+                  style={{ color: "#FF9F43" }}
+                >
+                  {calculatorData?.totalGap
+                    ? `You're losing ${formatCurrency(calculatorData.totalGap)}/month across at least 3 revenue leaks`
+                    : "See how ShiFt plugs the 7 revenue leaks"}
         </motion.p>
 
         <motion.h1
