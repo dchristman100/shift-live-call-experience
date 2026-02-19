@@ -134,6 +134,15 @@ export default function LiveDemoSection() {
   return (
     <section id="live-demo" className="py-20 md:py-28 bg-white">
       <div className="max-w-[1200px] mx-auto px-6">
+        <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="font-plus-jakarta text-base italic text-center text-white mb-10 max-w-[680px] mx-auto"
+          >
+            You just saw the leaks. Now experience the fix. Call our AI right now — see how fast it answers, how it qualifies, and how it books.
+          </motion.p>
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Left: Intro */}
           <motion.div
