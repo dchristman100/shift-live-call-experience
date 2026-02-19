@@ -42,31 +42,31 @@ export default function FinalCTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="font-montserrat text-sm font-bold uppercase tracking-[3px] mb-5"
-          style={{ color: "#FA982F" }}
-        >
-          Ready to stop losing revenue?
-        </motion.p>
+          className="font-plus-jakarta text-base text-white mb-4"
+          >
+            The calculator showed you the problem. This page showed you the fix.
+          </motion.p>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="font-montserrat text-3xl md:text-[44px] font-bold text-white leading-tight mb-5"
-        >
-          Book Your Reality Session
-        </motion.h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="font-outfit text-2xl md:text-[28px] font-bold text-white leading-tight mb-4"
+          >
+            Your Reality Session shows you the exact math — all 7 leaks quantified in dollars, with your numbers, live on screen.
+          </motion.h2>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="font-inter text-lg text-white/65 mb-10 leading-relaxed"
-        >
-          15 minutes. No pitch. We show you YOUR numbers — then you decide.
-        </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="font-plus-jakarta text-sm mb-10"
+            style={{ color: "#64748B" }}
+          >
+            15 minutes. Zero obligation.
+          </motion.p>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
