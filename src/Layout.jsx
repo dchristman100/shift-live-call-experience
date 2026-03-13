@@ -1,4 +1,5 @@
 import React from "react";
+import CallWidget from "./components/experience/CallWidget";
 
 export default function Layout({ children }) {
   return (
@@ -76,6 +77,7 @@ export default function Layout({ children }) {
         }
       `}</style>
       {children}
+      <CallWidget />
     </div>
   );
 }
